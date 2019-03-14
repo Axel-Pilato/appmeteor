@@ -1,17 +1,6 @@
 <template name="listeArtiste">	 
   <div class="container">
   
-  <h4>Vous souhaitez ajouter un artiste ?</h4>
-
-    	<form class="new-artiste">
-    		<input type="text" name="surnom" placeholder="Surnom de l'artiste" required>
-        <input type="text" name="prenom" placeholder="Prenom de l'artiste" required>
-        <input type="text" name="nom" placeholder="Nom de l'artiste" required>
-        <input type="date" name="dateBday" placeholder="Age de l'artiste" min="1" required>
-    		<input type="submit" name="submit" value="Ajouter">
-    	</form>
-
-  
   <h4>Voici la liste des artistes déjà présent</h4>
     
     <div class="collection">
@@ -19,6 +8,45 @@
       <a href="/artistes/{{_id}}" class="collection-item">{{surnom}}</a>
       {{/each}}
     </div>
+
+
+  
+  <h4>Vous souhaitez ajouter un artiste ?</h4>
+
+<form class="new-artiste">
+  <div class="row">
+    <form class="col s12">
+      <div class="row">
+         <div class="input-field col s7">
+          <input id="surnom" type="text" class="validate" required>
+          <label for="surnom">Surnom</label>
+        </div>
+        <div class="input-field col s6">
+          <input id="prenom" type="text" class="validate" required>
+          <label for="prenom">Prenom</label>
+        </div>
+        <div class="input-field col s6">
+          <input id="nom" type="text" class="validate" required>
+          <label for="nom">Nom</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <input id="desc" type="text" class="validate" required>
+          <label for="desc">Description</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <input id="dateBday" type="date" class="validate">
+        </div>
+      </div>
+    </form>
+    <input type="submit" name="submit" value="Ajouter"> 
+    <!-- <button class="btn waves-effect waves-light" type="submit" name="submit">Ajouter</button> -->
+
+  </div>
+</form>
 
   </div>
 </template>

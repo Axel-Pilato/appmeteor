@@ -1,15 +1,20 @@
 <template name="info">
-  <h2>Learn Meteor!</h2>
-  <ul>
-    <li>
-      <form class="info-link-add">
-        <input type="text" name="title" placeholder="Title" required>
-        <input type="url" name="url" placeholder="Url" required>
-        <input type="submit" name="submit" value="Add new link">
-      </form>
-    </li>
-    {{#each links}}
-      <li><a href="{{url}}" target="_blank">{{title}}</a></li>
-    {{/each}}
-  </ul>
+  <h3>Bienvenue sur le site Music'All</h3>
+
+{{#each artistes}}
+  <div class="row">
+    <div class="col s12 m4">
+      <div class="card hoverable">
+        <div class="card-content">
+          <p>{{surnom}}</p>
+          <p>{{desc}}</p>
+        </div>
+        <div class="card-action">
+          <a href="/artistes/{{_id}}">En savoir plus...</a>
+        </div>
+      </div>
+    </div>
+  </div>
+{{/each}}
+
 </template>
