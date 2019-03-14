@@ -11,14 +11,14 @@
     		<input type="submit" name="submit" value="Ajouter">
     	</form>
 
-
+  
   <h4>Voici la liste des artistes déjà présent</h4>
     
-    <ul>
+    <div class="collection">
       {{#each artiste}}
-        <li>{{surnom}}</li> 
+      <a href="/artistes/{{_id}}" class="collection-item">{{surnom}}</a>
       {{/each}}
-    </ul> 
+    </div>
 
   </div>
 </template>
