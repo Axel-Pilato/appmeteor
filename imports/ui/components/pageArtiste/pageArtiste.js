@@ -6,7 +6,8 @@ import './pageArtiste.html';
 Template.pageArtiste.onCreated(function(){
 	var self = this;
 	self.autorun(function(){
-		self.subscribe('artistes');
+		var id = FlowRouter.getParam('id');
+		self.subscribe('artistes', id);
 	});
 });
 
