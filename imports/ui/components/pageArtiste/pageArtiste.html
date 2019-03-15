@@ -1,17 +1,55 @@
 <template name="pageArtiste">
-	<h3>Informations sur l'artiste</h3>
-	<fieldset>
-		<div class="article">
-			<h4>Artiste : {{artiste.surnom}}</h4>
-			Nom : {{artiste.nom}}<br />
-			Prénom : {{artiste.prenom}}<br />
-			Date de naissance : {{artiste.dateBday}}<br />
-			Description :<br />
-		</div>
-	</fieldset>
-	<div class="section">
+	<div id="statics">
+		<h3>Informations sur l'artiste</h3>
 		<fieldset>
-			Réseaux sociaux :  
+			<div class="article">
+				<h4>Artiste : {{artiste.surnom}}</h4>
+				Nom : {{artiste.nom}}<br />
+				Prénom : {{artiste.prenom}}<br />
+				Date de naissance : {{artiste.dateBday}}<br />
+				Description :{{artiste.desc}}<br />
+			</div>
 		</fieldset>
+		<div class="section">
+			<fieldset>
+				Réseaux sociaux :  
+			</fieldset>
+		</div>
 	</div>
+	<div id="modif">
+		 <div class="row">
+	    <form class="col s12" id="new-artiste">
+	      <div class="row">
+	         <div class="input-field col s7">
+	          <input id="surnom" type="text" class="validate" required>
+	          <label for="surnom">Surnom</label>
+	        </div>
+	        <div class="input-field col s6">
+	          <input id="prenom" type="text" class="validate" required>
+	          <label for="prenom">Prenom</label>
+	        </div>
+	        <div class="input-field col s6">
+	          <input id="nom" type="text" class="validate" required>
+	          <label for="nom">Nom</label>
+	        </div>
+	      </div>
+	      <div class="row">
+	        <div class="input-field col s12">
+	          <textarea class="desc" id="desc"></textarea>
+	          <label for="desc">Description</label>
+	        </div>
+	      </div>
+	      <div class="row">
+	        <div class="input-field col s12">
+	          <input id="dateBday" type="date" class="validate">
+	        </div>
+	      </div>
+	    <input type="submit" name="submit" value="Ajouter"> 
+	    </form>
+	    <!-- <button class="btn waves-effect waves-light" type="submit" name="submit">Ajouter</button> -->
+	  </div>
+
+  </div>
+	</div>
+
 </template>

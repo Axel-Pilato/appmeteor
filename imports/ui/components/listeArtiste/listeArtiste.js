@@ -31,17 +31,17 @@ Template.listeArtiste.helpers({
 
 // Click Button "Ajouter"
 Template.listeArtiste.events({
-  'submit .new-artiste'(event) {
+  'submit #new-artiste'(event) {
 	event.preventDefault();
-
 	  const target = event.target;
     const surnom = target.surnom;
     const prenom = target.prenom;
        const nom = target.nom;
-      const desc = target.desc;
+      const desc = event.target.desc.value;
   const dateBday = target.dateBday;
 
-    Meteor.call('artiste.insert', surnom.value, prenom.value, nom.value,  desc.value, dateBday.value, (error) => {
+
+    Meteor.call('artiste.insert', surnom.value, prenom.value, nom.value,  desc, dateBday.value, (error) => {
       if (error) {
         alert(error.error);
       } else {
