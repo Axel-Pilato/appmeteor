@@ -49,9 +49,12 @@ Template.pageArtiste.events({
        const nom = target.nom;
       const desc = event.target.desc.value;
   const dateBday = target.dateBday;
+    const spotify = target.spotify;
+  const deezer = target.deezer;
+  const facebook = target.facebook;
 
   	var id = FlowRouter.getParam('id');
-    Meteor.call('artiste.update',id, surnom.value, prenom.value, nom.value,  desc, dateBday.value, (error) => {
+    Meteor.call('artiste.update',id, surnom.value, prenom.value, nom.value,  desc, dateBday.value, spotify.value, deezer.value, facebook.value, (error) => {
       if (error) {
         alert(error.error);
       } else {

@@ -27,9 +27,12 @@ Template.listeArtiste.events({
        const nom = target.nom;
       const desc = event.target.desc.value;
   const dateBday = target.dateBday;
+   const spotify = target.spotify;
+    const deezer = target.deezer;
+  const facebook = target.facebook;
 
 
-    Meteor.call('artiste.insert', surnom.value, prenom.value, nom.value,  desc, dateBday.value, (error) => {
+    Meteor.call('artiste.insert', surnom.value, prenom.value, nom.value,  desc, dateBday.value, spotify.value, deezer.value, facebook.value, (error) => {
       if (error) {
         alert(error.error);
       } else {
@@ -38,6 +41,9 @@ Template.listeArtiste.events({
              nom.value = '';
             desc.value = '';
         dateBday.value = '';
+         spotify.value = '';
+          deezer.value = '';
+        facebook.value = '';
       }
     });
   },
