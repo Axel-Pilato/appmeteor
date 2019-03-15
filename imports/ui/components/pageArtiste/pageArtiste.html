@@ -1,5 +1,6 @@
 <template name="pageArtiste">
-	<div id="statics">
+	<div id="statics" style="display: block">
+		<button id="modification">Modifier</button>
 		<h3>Informations sur l'artiste</h3>
 		<fieldset>
 			<div class="article">
@@ -16,40 +17,35 @@
 			</fieldset>
 		</div>
 	</div>
-	<div id="modif">
-		 <div class="row">
-	    <form class="col s12" id="new-artiste">
-	      <div class="row">
-	         <div class="input-field col s7">
-	          <input id="surnom" type="text" class="validate" required>
-	          <label for="surnom">Surnom</label>
-	        </div>
-	        <div class="input-field col s6">
-	          <input id="prenom" type="text" class="validate" required>
-	          <label for="prenom">Prenom</label>
-	        </div>
-	        <div class="input-field col s6">
-	          <input id="nom" type="text" class="validate" required>
-	          <label for="nom">Nom</label>
-	        </div>
-	      </div>
-	      <div class="row">
-	        <div class="input-field col s12">
-	          <textarea class="desc" id="desc"></textarea>
-	          <label for="desc">Description</label>
-	        </div>
-	      </div>
-	      <div class="row">
-	        <div class="input-field col s12">
-	          <input id="dateBday" type="date" class="validate">
-	        </div>
-	      </div>
-	    <input type="submit" name="submit" value="Ajouter"> 
-	    </form>
-	    <!-- <button class="btn waves-effect waves-light" type="submit" name="submit">Ajouter</button> -->
-	  </div>
-
-  </div>
+	<div id="modif" style="display: none">
+		<button id="close">Fermer</button>
+		<div class="row">
+	      <form class="col s12" id="modif-artiste">
+		      <div class="row">
+		         <div class="input-field col s7">
+		          <input id="surnom" type="text" class="validate" value="{{artiste.surnom}}" required>
+		        </div>
+		        <div class="input-field col s6">
+		          <input id="prenom" type="text" class="validate" value="{{artiste.prenom}}" required>
+		        </div>
+		        <div class="input-field col s6">
+		          <input id="nom" type="text" class="validate" value="{{artiste.nom}}" required>
+		        </div>
+		      </div>
+		      <div class="row">
+		        <div class="input-field col s12">
+		          <textarea class="desc" id="desc">{{artiste.desc}}</textarea>
+		        </div>
+		      </div>
+		      <div class="row">
+		        <div class="input-field col s12">
+		          <input id="dateBday" type="date" class="validate" value="{{artiste.dateBday}}">
+		        </div>
+		      </div>
+		      <input type="submit" name="submit" value="Modifier"> 
+	    	</form>
+	    	<!-- <button class="btn waves-effect waves-light" type="submit" name="submit">Ajouter</button> -->
+	    </div>
 	</div>
 
 </template>

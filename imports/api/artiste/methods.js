@@ -21,4 +21,19 @@ Meteor.methods({
       createdAt: new Date(),
     });
   },
+  'artiste.update'(id ,surnom, prenom, nom, desc, dateBday) {
+    check(surnom, String);
+    check(prenom, String);
+    check(nom, String);
+    check(desc, String);
+    check(dateBday, String);
+
+    return Artiste.update({_id: id},{$set:{
+      surnom: surnom,
+      prenom: prenom,
+      nom : nom,
+      desc: desc,
+      dateBday: dateBday,
+    }});
+  }
 });
