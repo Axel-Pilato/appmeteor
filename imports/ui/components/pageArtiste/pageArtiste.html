@@ -1,0 +1,54 @@
+<template name="pageArtiste">
+	<div id="statics" style="display: block">
+		<button id="modification">Modifier</button>
+		<h3>Informations sur l'artiste</h3>
+		<fieldset>
+			<div class="article">
+				<img src="{{artiste.image}}" width=275>
+				<h4>Artiste : {{artiste.surnom}}</h4>
+				Nom : {{artiste.nom}}<br />
+				Prénom : {{artiste.prenom}}<br />
+				Date de naissance : {{artiste.dateBday}}<br />
+				Description :{{artiste.desc}}<br />
+			</div>
+		</fieldset>
+		<div class="section">
+			<fieldset>
+				Réseaux sociaux :   <br /><br />
+				<a href="{{artiste.spotify}}" target=_blank><img src="/img/spotify.png" width=75></a><br /><br />
+				<a href="{{artiste.deezer}}" target=_blank><img src="/img/deezer.svg" width=75></a><br /><br />
+			    <a href="{{artiste.facebook}}" target=_blank><img src="/img/facebook-3.svg" width=75></a><br />
+			</fieldset>
+		</div>
+	</div>
+	<div id="modif" style="display: none">
+		<button id="close">Fermer</button>
+		<div class="row">
+	      <form class="col s12" id="modif-artiste">
+		      <div class="row">
+		         <div class="input-field col s7">
+		          <input id="surnom" type="text" class="validate" value="{{artiste.surnom}}" required>
+		        </div>
+		        <div class="input-field col s6">
+		          <input id="prenom" type="text" class="validate" value="{{artiste.prenom}}" required>
+		        </div>
+		        <div class="input-field col s6">
+		          <input id="nom" type="text" class="validate" value="{{artiste.nom}}" required>
+		        </div>
+		      </div>
+		      <div class="row">
+		        <div class="input-field col s12">
+		          <textarea class="desc" id="desc">{{artiste.desc}}</textarea>
+		        </div>
+		      </div>
+		      <div class="row">
+		        <div class="input-field col s12">
+		          <input id="dateBday" type="date" class="validate" value="{{artiste.dateBday}}">
+		        </div>
+		      </div>
+		      <input type="submit" name="submit" value="Modifier"> 
+	    	</form>
+	    </div>
+	</div>
+
+</template>

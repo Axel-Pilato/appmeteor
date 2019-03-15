@@ -1,0 +1,65 @@
+<template name="listeArtiste">	 
+  <div class="container">
+  
+  <h4>Voici la liste des artistes déjà présent</h4>
+    
+    <div class="collection">
+      {{#each artiste}}
+      <a href="/artistes/{{_id}}" class="collection-item">{{surnom}}</a>
+      {{/each}}
+    </div>
+
+
+  
+  <h4>Vous souhaitez ajouter un artiste ?</h4>
+
+  <div class="row">
+    <form class="col s12" id="new-artiste">
+      <div class="row">
+         <div class="input-field col s7">
+          <input id="surnom" type="text" class="validate" required>
+          <label for="surnom">Surnom *</label>
+        </div>
+        <div class="input-field col s6">
+          <input id="prenom" type="text" class="validate" required>
+          <label for="prenom">Prenom *</label>
+        </div>
+        <div class="input-field col s6">
+          <input id="nom" type="text" class="validate" required>
+          <label for="nom">Nom *</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <textarea class="desc" id="desc"></textarea>
+          <label for="desc">Description</label>
+        </div>
+
+        <div class="input-field col s7">
+          <input id="spotify" type="text" class="validate">
+          <label for="spotify">URL Spotify</label>
+        </div>
+
+        <div class="input-field col s7">
+          <input id="deezer" type="text" class="validate">
+          <label for="deezer">URL Deezer</label>
+        </div>
+
+        <div class="input-field col s7">
+          <input id="facebook" type="text" class="validate">
+          <label for="facebook">URL Facebook</label>
+        </div>
+
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <input id="dateBday" type="date" class="validate">
+        </div>
+      </div>
+    <input type="submit" name="submit" value="Ajouter"> 
+    </form>
+    <!-- <button class="btn waves-effect waves-light" type="submit" name="submit">Ajouter</button> -->
+  </div>
+
+  </div>
+</template>
