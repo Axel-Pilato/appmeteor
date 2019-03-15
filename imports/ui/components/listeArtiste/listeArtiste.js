@@ -39,7 +39,8 @@ Template.listeArtiste.events({
           surnom.value = '';
           prenom.value = '';
              nom.value = '';
-            desc.value = '';
+            var textarea = document.getElementById('desc');
+            textarea.value  = textarea.value.replace(textarea.value,"");
         dateBday.value = '';
          spotify.value = '';
           deezer.value = '';
